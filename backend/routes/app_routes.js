@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express();
 const { verifyAccessToken } = require("../helpers/jwt.js");
+const { addNewField } = require("../controllers/app/tracker_controller.js");
 
 /**
  * @openapi
@@ -28,7 +29,9 @@ const { verifyAccessToken } = require("../helpers/jwt.js");
  */
 router.get("/home", verifyAccessToken, (req, res) => {
   const userId = req.user.id;
-  res.json({ userid: userId });
+  res.json({ userid: userId, message:"user home page" });
 });
+
+router.post("/home/addnewtracker",verifyAccessToken,addNewField)
 
 module.exports = router;

@@ -1,12 +1,6 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
-// const {connectDb}=require("../config/db.js")
 mongoose.connect(process.env.MONGODB_URL);
-// const connect=async()=>{
-//     const resp=await connectDb
-//     console.log(resp)
-// }
-// connect()
 
 // Regular expression for validating a 10-digit mobile number
 const mobileRegex = /^[0-9]{10}$/;
